@@ -1,0 +1,2 @@
+#vm use ruby-1.9.2-p290@fuby --create
+rvm use ruby-2.0.0-rc2@fuby --create
