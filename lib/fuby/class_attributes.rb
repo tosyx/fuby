@@ -10,7 +10,7 @@ module Fuby
     end
 
     def class_attribute_get key
-      (respond_to? key) ? (send key) : (class_variable_get "@@#{ key }")
+      (respond_to? key) ? (send key) : (class_variable_get :"@@#{ key }")
     end
 
     def class_attributes_set opt
