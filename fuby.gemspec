@@ -9,8 +9,7 @@ Gem::Specification.new do |gem|
   gem.version       = Fuby::VERSION
   gem.authors       = ["Alex Goldsmith"]
   gem.email         = ["alex.k.goldsmith@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.summary       = "Lightweight extensions to the Ruby standard library"
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
