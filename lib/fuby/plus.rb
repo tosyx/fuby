@@ -1,5 +1,3 @@
-require 'fuby/_'
-
 module Fuby
   refine ::Regexp do
 

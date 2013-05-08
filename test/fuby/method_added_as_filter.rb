@@ -21,6 +21,7 @@ describe Module do
       c.new.must_respond_to :foo
 
       c.new.foo { |i| i < 3 }.must_equal [1, 2]
+      c.new.foo(Integer).must_equal [1, 2, 3]
 
     end
   end

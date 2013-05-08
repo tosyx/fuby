@@ -1,10 +1,8 @@
-require 'fuby/_'
-
 module Fuby
   refine ::Regexp do
 
     def to_regexp
-      self
+      dup
     end
 
     alias_method :to_re, :to_regexp
@@ -13,7 +11,7 @@ module Fuby
   refine ::Array do
 
     def to_regexp
-      ::Regexp.new map(&:to_re).join '|'
+      ::Regexp.new map { |term| term.to_regexp.source }.join '|'
     end
 
     alias_method :to_re, :to_regexp
@@ -22,7 +20,7 @@ module Fuby
   refine ::String do
 
     def to_regexp
-      ::Regexp.new ::Regex.escape(arg)
+      ::Regexp.new "(_|\\b|[^A-z])#{ ::Regexp.escape self }(_|\\b|[^A-z])"
     end
 
     alias_method :to_re, :to_regexp

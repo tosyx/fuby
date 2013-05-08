@@ -1,11 +1,11 @@
-require 'fuby/_'
 using Fuby
 
 module Fuby
   refine ::Array do
 
     def drop i = 1
-      super i % length
+      return [] if empty?
+      return super i % length
     end
 
     def drop! i = 1

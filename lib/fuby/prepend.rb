@@ -1,7 +1,3 @@
-require 'fuby/_'
-
-using Fuby
-
 module Fuby
   refine ::Module do
 

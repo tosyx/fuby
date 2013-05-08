@@ -1,5 +1,3 @@
-require 'fuby/_'
-
 module Fuby
   refine ::Object do
 
@@ -42,8 +40,8 @@ module Fuby
         @class  = (class << self; self end).superclass
       end
 
-      def method_missing key, *sig
-        return __wrap__ @object.send key, *sig if @object.respond_to? key
+      def method_missing key, *sig, &blk
+        return __wrap__ @object.send key, *sig, &blk if @object.respond_to? key
         return __wrap__ nil
       end
 

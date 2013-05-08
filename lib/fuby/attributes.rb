@@ -1,7 +1,5 @@
 require 'delegate'
 
-require 'fuby/_'
-
 using Fuby
 
 module Fuby

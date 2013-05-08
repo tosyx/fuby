@@ -1,4 +1,5 @@
-require 'fuby/_'
+require_relative 'method_added_as_filter'
+
 using Fuby
 
 module Fuby

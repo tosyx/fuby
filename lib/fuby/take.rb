@@ -1,12 +1,11 @@
-require 'fuby/_'
-
 using Fuby
 
 module Fuby
   refine ::Array do
 
     def take i = 1
-      super i % length
+      return [] if empty?
+      return super i % length
     end
 
     def take! i = 1

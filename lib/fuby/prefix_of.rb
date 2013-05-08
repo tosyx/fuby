@@ -1,4 +1,3 @@
-require 'fuby/_'
 require_relative 'part_of'
 
 module Fuby

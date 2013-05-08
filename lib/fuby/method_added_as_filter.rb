@@ -1,4 +1,3 @@
-require 'fuby/_'
 require 'fuby/prepend'
 require 'fuby/to_pred'
 
@@ -10,7 +9,7 @@ module Fuby
         prepend do
           define_method name do |match = nil, &pred|
             return method name if match.nil? && pred.nil?
-            return super &(pred or match.to_pred) 
+            return super &(pred || match.to_pred)
           end
         end
       end

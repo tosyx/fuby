@@ -7,14 +7,28 @@ describe Module do
   describe "prepend &block" do
     it "creates and prepends a module based on the given &block" do
 
-      c = Class.new
-      c.send :prepend do
+      klass = Class.new do
+
+        include Module.new {
+          def foo
+            '1st'
+          end
+        }
 
         def foo
+          '2nd' + super
         end
 
       end
-      c.new.must_respond_to :foo
+      klass.send :prepend do
+
+        def foo
+          '3rd' + super
+        end
+
+      end
+      klass.new.must_respond_to :foo
+      klass.new.foo.must_equal '3rd2nd1st'
 
     end
   end

@@ -1,11 +1,10 @@
-require 'fuby/_'
-require_relative 'part_of'
+using Fuby
 
 module Fuby
   refine ::Array do
 
     def prefixes
-      (length .. 1).map &(method :take)
+      length.downto(1).map &(method :take)
     end
 
   end

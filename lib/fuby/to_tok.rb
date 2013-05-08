@@ -1,4 +1,3 @@
-require 'fuby/_'
 
 module Fuby
   refine ::Enumerable do

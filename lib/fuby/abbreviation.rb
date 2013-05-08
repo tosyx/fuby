@@ -1,4 +1,3 @@
-require 'fuby/_'
 require 'fuby/unabbreviation'
 
 using Fuby

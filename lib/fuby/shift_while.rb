@@ -1,5 +1,8 @@
-require 'fuby/_'
-require_relative 'method_added'
+require_relative 'not'
+require_relative 'shift_until'
+require_relative 'method_added_as_filter'
+
+using Fuby
 
 module Fuby
   refine ::Array do

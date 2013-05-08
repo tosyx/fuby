@@ -1,24 +1,31 @@
-require 'fuby/_'
-require_relative 'to_symbols'
-require_relative 'to_upper_case_1st'
+require_relative 'to_components'
 
 using Fuby
 
 module Fuby
-  refine ::Symbol do
+  refine ::String do
 
     def to_camelCase
-      @to_camelCase ||= begin
-        symbols = to_symbols
-        first   = symbols.unshift.to_lower_case
-        symbols.map! &:to_UPPER_CASE_1st
-        symbols.unshift first
-        symbols.join.to_sym
-      end
+      components = to_components
+      first      = components.shift.downcase
+      components.map! { |str| str.sub /[A-z0-9]/, &:upcase }
+      components.unshift first
+      components.join
     end
 
     def to_CamelCase
-      @to_CamelCase ||= to_symbols.map!(&:to_UPPER_CASE_1st).join.to_sym
+      to_components.map! { |str| str.sub /[A-z0-9]/, &:upcase }.join
+    end
+
+  end
+  refine ::Symbol do
+
+    def to_camelCase
+      @to_camelCase ||= to_s.to_camelCase.to_sym
+    end
+
+    def to_CamelCase
+      @to_CamelCase ||= to_s.to_CamelCase.to_sym
     end
 
   end

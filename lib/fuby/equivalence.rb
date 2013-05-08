@@ -1,5 +1,5 @@
-require 'fuby/_'
 require_relative 'splat'
+
 using Fuby
 
 module Fuby

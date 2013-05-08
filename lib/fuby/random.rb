@@ -1,4 +1,3 @@
-require 'fuby/_'
 using Fuby
 
 require 'securerandom'

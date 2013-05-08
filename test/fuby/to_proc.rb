@@ -11,6 +11,7 @@ describe Array do
     end
   end
 end
+
 describe Hash do
   describe "to_proc" do
     it "returns a Proc that interprets `self` as a fuzzy lookup table" do
@@ -23,6 +24,7 @@ describe Hash do
     end
   end
 end
+
 describe String do
   describe "to_proc" do
     it "returns a Proc based on `self` as a format string" do
@@ -32,6 +34,7 @@ describe String do
     end
   end
 end
+
 describe Regexp do
   describe "to_proc" do
     it "returns a Proc based on `self` as a grouping expression" do
@@ -41,6 +44,7 @@ describe Regexp do
     end
   end
 end
+
 describe Integer do
   describe "to_proc" do
     it "returns a Proc that takes an array and returns the element at this index" do

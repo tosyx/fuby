@@ -1,4 +1,3 @@
-require 'fuby/_'
 
 describe Module do
   describe 'prepend *modules' do
@@ -38,13 +37,13 @@ describe Module do
 
     end
   end
-  describe 'refine class, &block' do
-    it "should only work for classes" do
+# describe 'refine class, &block' do
+#   it "should only work for classes" do
 
-      proc { refine(Module.new) {} }.must_raise TypeError
+#     proc { refine(Module.new) {} }.must_raise TypeError
 
-    end
-  end
+#   end
+# end
 end
 
 tmp_class = Class.new

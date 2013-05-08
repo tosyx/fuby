@@ -1,4 +1,3 @@
-require 'fuby/_'
 require_relative 'define_tok'
 
 module Fuby

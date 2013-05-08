@@ -1,14 +1,19 @@
-require 'fuby/_'
-require_relative 'methods_added_as_enumerator'
+using Fuby
 
 module Fuby
   refine ::Hash do
 
     def each_with_index_or_key
-      each { |key, val| yield val, key }
+      return each { |key, val| yield val, key } if block_given?
+      return ::Enumerator.new { |result| each { |key, val| result.<< val, key } }
     end
 
-    methods_added_as_enumerator :each_with_index_or_key
+  end
+  refine ::Array do
+
+    def each_with_index_or_key *sig, &blk
+      each_with_index *sig, &blk
+    end
 
   end
 end

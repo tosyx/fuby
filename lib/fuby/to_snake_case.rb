@@ -1,19 +1,27 @@
-require 'fuby/_'
-require_relative 'to_symbols'
-require_relative 'to_lower_case'
-require_relative 'to_upper_case'
+require_relative 'to_components'
 
 using Fuby
 
 module Fuby
-  refine ::Symbol do
+  refine ::String do
 
     def to_snake_case
-      @to_snake_case ||= to_symbols.join('_').to_sym.to_lower_case
+      to_components.join('_').downcase
     end
 
     def to_SNAKE_CASE
-      @to_SNAKE_CASE ||= to_symbols.join('_').to_sym.to_UPPER_CASE
+      to_components.join('_').upcase
+    end
+
+  end
+  refine ::Symbol do
+
+    def to_snake_case
+      @to_snake_case ||= to_s.to_snake_case.to_sym
+    end
+
+    def to_SNAKE_CASE
+      @to_SNAKE_CASE ||= to_s.to_SNAKE_CASE.to_sym
     end
 
   end

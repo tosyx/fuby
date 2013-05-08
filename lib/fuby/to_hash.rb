@@ -1,11 +1,13 @@
-require 'fuby/_'
+require_relative 'descendants'
+require_relative 'each_with_index_or_key'
+
 using Fuby
 
 module Fuby
-  refine ::Enumerable do
+  module ::Enumerable # can't refine a Module
 
     def to_hash
-      invert.invert
+      {}.tap { |hash| each_with_index_or_key { |val, key| hash[key] = val } }
     end
 
     alias_method :to_h, :to_hash
@@ -14,7 +16,7 @@ module Fuby
   refine ::Hash do
 
     def to_hash
-      self
+      dup
     end
 
     alias_method :to_h, :to_hash

@@ -1,13 +1,20 @@
-require 'fuby/_'
+require_relative 'self_and_descendants'
+require_relative 'each_with_index_or_key'
+
+using Fuby
 
 module Fuby
 
-  refine ::Enumerable do
+  Enumerable.self_and_descendants.each do |klass|
+    unless klass.instance_method_defined? :invert
+      refine klass do
 
-    def invert
-      ::Hash[ each_with_index.to_a ]
+        def invert
+          ::Hash[ each_with_index_or_key.to_a ]
+        end
+
+      end
     end
-
   end
 
 end

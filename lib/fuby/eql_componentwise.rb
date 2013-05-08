@@ -1,4 +1,3 @@
-require 'fuby/_'
 require_relative 'each_with_index_or_key'
 
 using Fuby

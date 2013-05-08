@@ -1,10 +1,11 @@
-require 'fuby/_'
 require_relative 'method_added_as_filter'
+require_relative 'self_and_descendants'
+require_relative 'try_each'
 
-module Fuby
-  refine ::Enumerable do
+using Fuby
 
-    method_added_as_filter :all?
+Enumerable.self_and_descendants.try_each.module_eval do
 
-  end
+   method_added_as_filter :all?
+
 end

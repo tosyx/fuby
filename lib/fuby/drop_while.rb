@@ -1,4 +1,5 @@
-require 'fuby/_'
+require_relative 'shift_while'
+
 using Fuby
 
 module Fuby
