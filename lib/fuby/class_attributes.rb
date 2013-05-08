@@ -6,7 +6,7 @@ module Fuby
   refine ::Module do
     
     def class_attribute_set key, val
-      (singleton_class.respond_to? "#{ key }=") ? (singleton_class..send "#{ key }=", val) : (class_variable_set "@@{ key }", val)
+      (singleton_class.respond_to? :"#{ key }=") ? (singleton_class.send :"#{ key }=", val) : (class_variable_set "@@{ key }", val)
     end
 
     def class_attribute_get key

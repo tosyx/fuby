@@ -13,7 +13,7 @@ module Fuby
     end
 
   end
-  refine ::Enumerable do
+  module ::Enumerable # can't refine Module
 
     def dimension
       count

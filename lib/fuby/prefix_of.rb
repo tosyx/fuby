@@ -6,7 +6,7 @@ module Fuby
     alias_method :prefix_of?, :part_of?
     alias_method :matches_prefix_of?, :matches_part_of?
 
-    methods_added_as_binary_operator :prefix_of?, :matches_prefix_of?
+    method_added_as_binary_operator :prefix_of?, :matches_prefix_of?
 
   end
 end

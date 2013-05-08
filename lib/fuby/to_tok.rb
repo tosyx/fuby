@@ -1,6 +1,6 @@
 
 module Fuby
-  refine ::Enumerable do
+  module ::Enumerable # can't refine Module
 
     def to_tok
       ::Proc.new &method(:[])

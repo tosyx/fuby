@@ -1,4 +1,4 @@
-require_relative 'method_added'
+require_relative 'method_added_as_filter'
 
 module Fuby
   refine ::Array do

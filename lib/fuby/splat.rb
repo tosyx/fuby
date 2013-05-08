@@ -1,7 +1,7 @@
 using Fuby
 
 module Fuby
-  refine ::Enumerable do
+  module ::Enumerable # can't refine Module
 
     def splat
       ::Enumerator.new { |result| each { |sig| result.<< *sig } }

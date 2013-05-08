@@ -1,5 +1,3 @@
-require_relative 'method_added'
-
 module Fuby
   refine ::Array do
 

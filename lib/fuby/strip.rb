@@ -1,4 +1,5 @@
-require_relative '+'
+require_relative 'plus'
+
 using Fuby
 
 module Fuby

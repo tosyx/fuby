@@ -1,5 +1,5 @@
 module Fuby
-  refine ::Enumerable do
+  module ::Enumerable # can't refine Module
 
     def matches? that
       count == that.count and matches_componentwise? that

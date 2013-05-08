@@ -11,7 +11,7 @@ module Fuby
       matches? that.drop - length
     end
 
-    methods_added_as_binary_operator :suffix_of?, :matches_suffix_of?
+    method_added_as_binary_operator :suffix_of?, :matches_suffix_of?
 
   end
 end

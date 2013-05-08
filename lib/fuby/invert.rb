@@ -5,16 +5,12 @@ using Fuby
 
 module Fuby
 
-  Enumerable.self_and_descendants.each do |klass|
-    unless klass.instance_method_defined? :invert
-      refine klass do
+  module ::Enumerable # can't refine Module
 
-        def invert
-          ::Hash[ each_with_index_or_key.to_a ]
-        end
-
-      end
+    def invert
+      ::Hash[ each_with_index_or_key.to_a ]
     end
+
   end
 
 end

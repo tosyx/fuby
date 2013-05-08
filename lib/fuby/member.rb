@@ -1,5 +1,9 @@
+require_relative 'method_added_as_binary_operator'
+
+using Fuby
+
 module Fuby
-  refine ::Enumerable do
+  module ::Enumerable # can't refine Module
 
     method_added_as_binary_operator :member?, :include?
 
