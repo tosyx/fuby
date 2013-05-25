@@ -3,7 +3,7 @@ module Fuby
 
     def method_added_as_binary_operator *names
       names.each do |name|
-        prepend do
+        prepend! do
           define_method name do |*sig|
             return method name if sig.empty?
             return super *sig

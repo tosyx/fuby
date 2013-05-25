@@ -1,9 +1,9 @@
 module Fuby
   refine ::Module do
 
-    def prepend *includes, &body
-      super *includes unless includes.empty?
-      super ::Module.new(&body) if block_given?
+    def prepend! *includes, &body
+      prepend *includes unless includes.empty?
+      prepend ::Module.new(&body) if block_given?
       self
     end
 

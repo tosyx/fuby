@@ -1,3 +1,8 @@
+require_relative 'bind'
+require_relative 'define_missing_method'
+
+using Fuby
+
 module Fuby
 
   refine ::Object do

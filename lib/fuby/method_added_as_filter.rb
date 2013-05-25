@@ -6,7 +6,7 @@ module Fuby
 
     def method_added_as_filter *names
       names.each do |name|
-        prepend do
+        prepend! do
           define_method name do |match = nil, &pred|
             return method name if match.nil? && pred.nil?
             return super &(pred || match.to_pred)

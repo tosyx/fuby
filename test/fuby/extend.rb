@@ -7,7 +7,7 @@ describe Module do
     it "creates and extends a module based on the given &block" do
 
       o = Object.new
-      o.extend do
+      o.extend! do
 
         def foo
         end

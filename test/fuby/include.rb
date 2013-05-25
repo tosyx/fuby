@@ -1,5 +1,4 @@
 require 'fuby/include'
-require 'fuby/send'
 
 using Fuby
 
@@ -8,7 +7,7 @@ describe Module do
     it "creates and includes a module based on the given &block" do
 
       c = Class.new
-      c.send :include do
+      c.include! do
 
         def foo
         end

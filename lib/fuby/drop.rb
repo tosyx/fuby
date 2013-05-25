@@ -4,7 +4,8 @@ module Fuby
   refine ::Array do
 
     def drop i = 1
-      return [] if empty?
+      return []    if empty?
+      return super if i >= 0
       return super i % length
     end
 

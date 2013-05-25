@@ -1,5 +1,4 @@
 require 'fuby/prepend'
-require 'fuby/send'
 
 using Fuby
 
@@ -20,7 +19,7 @@ describe Module do
         end
 
       end
-      klass.send :prepend do
+      klass.prepend! do
 
         def foo
           '3rd' + super

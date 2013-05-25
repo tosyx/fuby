@@ -12,10 +12,15 @@ describe Module do
           5
         end
 
+        define_missing_method /all/ do
+          5
+        end
+
       end
 
       A.new.many.must_equal 5
       A.new.respond_to?(:zany).must_equal true
+      A.new.respond_to?(:mall).must_equal true
 
     end
     it "prepends any matched anonymous groups" do
