@@ -12,6 +12,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Alex Goldsmith"]
   gem.email         = ["alex.k.goldsmith@gmail.com"]
   gem.summary       = "Lightweight extensions to the Ruby standard library"
+  gem.description   = "Lightweight extensions to the Ruby standard library provided by the refinements mechanism."
   gem.homepage      = "http://github.com/tosyx/fuby"
 
   gem.files         = `git ls-files`.split($/)
