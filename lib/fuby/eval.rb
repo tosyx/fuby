@@ -1,7 +1,6 @@
 require_relative 'intercept'
 
 module Fuby
-
   refine ::Hash do
 
     def hash_eval &body
@@ -32,7 +31,6 @@ module Fuby
     alias_method :hash_exec, :hash_eval
 
   end
-
   refine ::Object do
 
     def curry_eval *pre, &shell
@@ -50,5 +48,4 @@ module Fuby
     alias_method :curry_exec, :curry_eval
 
   end
-
 end

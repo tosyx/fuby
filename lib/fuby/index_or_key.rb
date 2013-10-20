@@ -1,5 +1,4 @@
 module Fuby
-
   refine ::Array do
 
     def index_or_key
@@ -7,7 +6,6 @@ module Fuby
     end
 
   end
-
   refine ::Hash do
 
     def index_or_key
@@ -15,5 +13,4 @@ module Fuby
     end
 
   end
-
 end

@@ -1,7 +1,5 @@
 require_relative 'plus'
 
-using Fuby
-
 module Fuby
   refine ::String do
 

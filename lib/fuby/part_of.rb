@@ -1,8 +1,6 @@
 require_relative 'method_added_as_binary_operator'
 require_relative 'eql_componentwise'
 
-using Fuby
-
 module Fuby
   module ::Enumerable # can't refine Module
 

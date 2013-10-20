@@ -1,5 +1,4 @@
 require_relative 'equivalence'
-using Fuby
 
 module Fuby
   module ::Enumerable # can't refine Module

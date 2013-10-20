@@ -1,7 +1,5 @@
 require_relative 'uuid'
 
-using Fuby
-
 module Fuby
   refine ::Proc do
 

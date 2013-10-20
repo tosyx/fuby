@@ -1,7 +1,5 @@
 require_relative 'attributes'
 
-using Fuby
-
 module Fuby
   refine ::Module do
     

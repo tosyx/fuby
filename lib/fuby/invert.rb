@@ -1,8 +1,6 @@
 require_relative 'self_and_descendants'
 require_relative 'each_with_index_or_key'
 
-using Fuby
-
 module Fuby
 
   module ::Enumerable # can't refine Module

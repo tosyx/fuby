@@ -1,4 +1,5 @@
 require_relative 'try_eval'
+using Fuby
 
 module Fuby
   refine ::Object do

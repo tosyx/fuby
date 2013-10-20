@@ -1,5 +1,3 @@
-using Fuby
-
 module Fuby
   refine ::Object do
 

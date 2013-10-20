@@ -1,7 +1,5 @@
 require_relative 'to_components'
 
-using Fuby
-
 module Fuby
   refine ::String do
 

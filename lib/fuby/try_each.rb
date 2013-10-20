@@ -1,5 +1,4 @@
 require_relative 'try'
-
 using Fuby
 
 module Fuby

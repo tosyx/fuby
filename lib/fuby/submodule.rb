@@ -1,6 +1,4 @@
-require 'fuby/include'
-
-using Fuby
+require_relative 'include'
 
 module Fuby
   refine ::Module do

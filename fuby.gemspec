@@ -17,5 +17,6 @@ Gem::Specification.new do |gem|
   gem.homepage      = "http://github.com/tosyx/fuby"
 
   gem.files         = `git ls-files`.split($/)
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
+  gem.require_paths = Dir[ "lib" ]
+  gem.test_files    = Dir[ "test/**/*" ]
 end

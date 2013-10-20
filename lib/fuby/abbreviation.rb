@@ -1,6 +1,4 @@
-require 'fuby/unabbreviation'
-
-using Fuby
+require_relative 'unabbreviation'
 
 module Fuby
   refine ::Symbol do

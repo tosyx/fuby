@@ -1,4 +1,4 @@
-require 'fuby/abbreviation'
+require_relative 'abbreviation'
 
 module Fuby
   refine ::Symbol do

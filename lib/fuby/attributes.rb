@@ -1,7 +1,5 @@
 require 'delegate'
 
-using Fuby
-
 module Fuby
   class Attributes < SimpleDelegator
 

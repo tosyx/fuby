@@ -1,4 +1,5 @@
-require 'fuby/try'
+require_relative 'try'
+using Fuby
 
 module Fuby
   refine ::Object do

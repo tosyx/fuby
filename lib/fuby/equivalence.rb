@@ -1,7 +1,5 @@
 require_relative 'splat'
 
-using Fuby
-
 module Fuby
   module ::Enumerable # can't refine Module
 

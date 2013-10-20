@@ -1,5 +1,3 @@
-using Fuby
-
 require 'securerandom'
 
 module Fuby
