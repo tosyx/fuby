@@ -1,14 +1,15 @@
 # coding: utf-8
 
-def path_to(name) File.expand_path "../#{ name }", __FILE__ end
+path_to = proc do |name| File.expand_path "../#{ name }", __FILE__ end
 
-version = File.read(path_to 'VERSION').strip
+version = File.read(path_to.('VERSION')).strip
 
-$:.push path_to 'lib'
+$:.push path_to.('lib')
 
 Gem::Specification.new do |gem|
   gem.name          = "fuby"
   gem.version       = version
+  gem.license       = "MIT"
   gem.authors       = ["Alex Goldsmith"]
   gem.email         = ["alex.k.goldsmith@gmail.com"]
   gem.summary       = "Lightweight extensions to the Ruby standard library"
