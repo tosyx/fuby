@@ -1,9 +1,7 @@
 require_relative 'equivalence'
 
-using Fuby
-
 module Fuby
-  module ::Enumerable # can't refine Module
+  refine ::Array do
 
     def longest_common_suffix *those
       zip(*those).map(&:reverse).take_while(:equivalence?).map(:first).map(&:reverse)

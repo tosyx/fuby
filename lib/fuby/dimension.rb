@@ -1,3 +1,5 @@
+require_relative 'enumerables'
+
 module Fuby
   refine ::Object do
 
@@ -13,11 +15,13 @@ module Fuby
     end
 
   end
-  module ::Enumerable # can't refine Module
+  Enumerables.each do |enumerable|
+    refine enumerable do
 
-    def dimension
-      count
+      def dimension
+        count
+      end
+
     end
-
   end
 end

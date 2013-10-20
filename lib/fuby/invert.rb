@@ -1,14 +1,15 @@
-require_relative 'descendants'
-require_relative 'each_with_index_or_key'
+require_relative 'enumerables'
+require_relative 'to_hash'
 
 using Fuby
 
 module Fuby
-  ::Enumerable.descendants(Class).each do |enumerable|
+  Enumerables.each do |enumerable|
+    next if Hash >= enumerable
     refine enumerable do
 
       def invert
-        ::Hash[ each_with_index_or_key.to_a ]
+        to_hash.invert
       end
 
     end

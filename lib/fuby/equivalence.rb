@@ -1,11 +1,14 @@
 require_relative 'splat'
+require_relative 'enumerables'
 
 module Fuby
-  module ::Enumerable # can't refine Module
+  Enumerables.each do |enumerable|
+    refine enumerable do
 
-    def equivalence? eq = :eql?
-      each_cons(2).splat.all? { |fst, snd| fst.send eq, snd }
+      def equivalence? eq = :eql?
+        each_cons(2).splat.all? { |fst, snd| fst.send eq, snd }
+      end
+
     end
-
   end
 end
