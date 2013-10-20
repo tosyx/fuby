@@ -1,14 +1,16 @@
-require_relative 'self_and_descendants'
+require_relative 'descendants'
 require_relative 'each_with_index_or_key'
 
+using Fuby
+
 module Fuby
+  ::Enumerable.descendants(Class).each do |enumerable|
+    refine enumerable do
 
-  module ::Enumerable # can't refine Module
+      def invert
+        ::Hash[ each_with_index_or_key.to_a ]
+      end
 
-    def invert
-      ::Hash[ each_with_index_or_key.to_a ]
     end
-
   end
-
 end

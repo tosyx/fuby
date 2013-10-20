@@ -2,12 +2,11 @@ module Fuby
   refine ::Module do
 
     def descendants type = ::Module
-    # ObjectSpace.each_object(type).select { |mod| mod < self } FIXME
-      ObjectSpace.each_object(type).select { |mod| mod.ancestors.include? self }
+      ObjectSpace.each_object(type).select { |mod| mod < self }
     end
 
   end
 end
 
-Dir.glob "descendants_*.rb", &method(:require)
-Dir.glob "*_descendants.rb", &method(:require)
+Dir.glob "#{ __FILE__.chomp ".rb" }_*.rb", &method(:require)
+Dir.glob "*_#{ __FILE__.chomp ".rb" }.rb", &method(:require)

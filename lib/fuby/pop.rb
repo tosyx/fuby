@@ -1,8 +1,9 @@
 module Fuby
   refine ::Array do
 
-    def pop i = 1
-      return super i % length unless empty?
+    def pop i = nil
+      return super() unless i
+      return super(i % length) unless empty?
     end
 
   end

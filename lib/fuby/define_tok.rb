@@ -1,3 +1,5 @@
+require_relative 'to_tok'
+
 module Fuby
   refine ::Module do
 

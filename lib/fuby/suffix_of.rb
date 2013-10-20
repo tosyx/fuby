@@ -5,13 +5,9 @@ module Fuby
       eql? that.drop -length
     end
 
-    def matches_suffix_of? that
-      matches? that.drop - length
-    end
-
-    method_added_as_binary_operator :suffix_of?, :matches_suffix_of?
+    method_added_as_binary_operator :suffix_of?
 
   end
 end
 
-Dir.glob "*_suffix_of.rb", &method(:require)
+Dir.glob "*_#{ __FILE__.chomp ".rb" }.rb", &method(:require)

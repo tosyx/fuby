@@ -1,8 +1,9 @@
 module Fuby
   refine ::Array do
 
-    def shift i = 1
-      return super i % length unless empty?
+    def shift i = nil
+      return super() unless i
+      return super(i % length) unless empty?
     end
 
   end

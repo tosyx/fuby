@@ -1,4 +1,5 @@
 require_relative 'shift_options'
+
 using Fuby
 
 module Fuby

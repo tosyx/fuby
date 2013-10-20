@@ -1,6 +1,8 @@
 require_relative 'method_added_as_binary_operator'
 require_relative 'eql_componentwise'
 
+using Fuby
+
 module Fuby
   module ::Enumerable # can't refine Module
 
@@ -12,3 +14,5 @@ module Fuby
 
   end
 end
+
+Dir.glob "*_#{ __FILE__.chomp ".rb" }.rb", &method(:require)

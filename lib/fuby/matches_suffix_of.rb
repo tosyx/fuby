@@ -1,3 +1,6 @@
+require_relative 'method_added_as_binary_operator'
+require_relative 'matches'
+
 module Fuby
   refine ::Array do
 
