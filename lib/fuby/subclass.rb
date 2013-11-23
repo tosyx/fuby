@@ -10,10 +10,10 @@ module Fuby
         Class.new self
       
       when Module
-        Class.new.include! self
+        Class.new.send.include self
       
       else super
-      end.include! *sig, &blk
+      end.send.include *sig, &blk
     end
 
   end

@@ -3,14 +3,14 @@ require_relative 'enumerables'
 module Fuby
   refine ::Object do
 
-    def dimension
+    def cardinality
       1
     end
 
   end
   refine ::NilClass do
 
-    def dimension
+    def cardinality
       0
     end
 
@@ -18,7 +18,7 @@ module Fuby
   Enumerables.each do |enumerable|
     refine enumerable do
 
-      def dimension
+      def cardinality
         count
       end
 

@@ -4,9 +4,7 @@ module Fuby
   refine ::Module do
 
     def self_and_descendants type = ::Module
-      them = descendants type
-      them << self if type === self
-      them
+      ObjectSpace.each_object(type).select { |mod| mod <= self }
     end
 
   end

@@ -18,7 +18,7 @@ describe Object do
       end
     end
     describe [Proc] do
-      it "tries calling the block_given with each element wrapped in a try proxy" do
+      it "tries calling the block_given with each element wrapped in a send proxy" do
 
         [Array, Object, Enumerable].try_each do |mod|
           mod.non_existant_method.must_be_nil

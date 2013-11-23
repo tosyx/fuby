@@ -12,7 +12,7 @@ module Fuby
     end
 
     def to_CamelCase
-      to_components.map! { |str| str.sub /[A-z0-9]/, &:upcase }.join
+      to_components.map { |str| str.sub /[A-z0-9]/, &:upcase }.join
     end
 
   end

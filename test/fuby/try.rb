@@ -28,7 +28,7 @@ describe Object do
   end
   describe :try? do
     describe [] do
-      it "returns a proxy of self that either responds with the original method, or nil if method_missing" do
+      it "returns a proxy of self that either responds with the original method, or `self` if method_missing" do
 
         obj = Object.new
         obj.try?.this_method_does_not_exist.must_be_same_as obj

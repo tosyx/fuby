@@ -5,7 +5,7 @@ using Fuby
 describe Object do
   describe :try_eval do
     describe [Proc] do
-      it "evals the block_given in self, chaining each method as a try, returning the result" do
+      it "evals the block_given in self, chaining each method as a send, returning the result" do
 
         arr = [1, 2, 3]
         arr.try_eval { self }.must_be_same_as arr
@@ -19,7 +19,7 @@ describe Object do
   end
   describe :try_eval? do
     describe [Proc] do
-      it "evals the block_given in self, chaining each method as a try, returning the result or the original object (if the result is nil)" do
+      it "evals the block_given in self, chaining each method as a send, returning the result or the original object (if the result is nil)" do
 
         arr = [1, 2, 3]
         arr.try_eval? { self }.must_be_same_as arr

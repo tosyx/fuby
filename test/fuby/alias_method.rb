@@ -3,7 +3,7 @@ require 'fuby/alias_method'
 using Fuby
 
 describe Module do
-  describe "alias_method! existing_method_name" do
+  describe "alias_method existing_method_name" do
     it "creates and returns a new symbol that aliases the existing_method_name" do
 
       class A
@@ -15,7 +15,7 @@ describe Module do
         eval %{
 
           def foo
-            #{ alias_method! :foo } * 10
+            #{ alias_method :foo } * 10
           end
 
         }

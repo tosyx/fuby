@@ -1,10 +1,21 @@
-module Fuby
-  refine ::Object do
+require_relative 'send'
 
-    def extend! *extends, &body
-      extend *extends unless extends.empty?
-      extend ::Module.new(&body) if block_given?
+module Fuby
+  refine ::Module do
+
+    def extend *extends, &body
+      self.send :extend, *extends unless extends.empty?
+      self.send :extend, ::Module.new(&body) if block_given?
       self
+    end
+
+  end
+  class Send
+
+    def extend *extends, &body
+      @self.send :extend, *extends unless extends.empty?
+      @self.send :extend, ::Module.new(&body) if block_given?
+      @self
     end
 
   end

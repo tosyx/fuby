@@ -19,7 +19,7 @@ describe Module do
         end
 
       end
-      klass.prepend! do
+      klass.send.prepend do
 
         def foo
           '3rd' + super
