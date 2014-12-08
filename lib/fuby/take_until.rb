@@ -1,3 +1,8 @@
+require_relative 'method_added_as_filter'
+require_relative 'not'
+
+using Fuby
+
 module Fuby
   refine ::Array do
 

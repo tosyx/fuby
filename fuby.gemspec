@@ -11,7 +11,7 @@ Gem::Specification.new do |gem|
   gem.version       = version
   gem.license       = "MIT"
   gem.authors       = ["Alex Goldsmith"]
-  gem.email         = ["alex.k.goldsmith@gmail.com"]
+  gem.email         = ["alex.tosyx@gmail.com"]
   gem.summary       = "Lightweight extensions to the Ruby standard library"
   gem.description   = "Lightweight extensions to the Ruby standard library provided by the refinements mechanism."
   gem.homepage      = "http://github.com/tosyx/fuby"
